@@ -23,7 +23,7 @@ app.use("/subcategories", subCategoryRoutes);
 //brand
 app.use("/brand", brandRoutes);
 //
-app.use(".products", productRoutes);
+app.use("/products", productRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
