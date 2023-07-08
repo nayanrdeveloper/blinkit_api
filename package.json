@@ -1,0 +1,26 @@
+{
+  "name": "blinkit_api",
+  "version": "1.0.0",
+  "description": "Blinkit api for our app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nayanrdeveloper/blinkit_api.git"
+  },
+  "keywords": [
+    "blinkit_api",
+    "blinkit",
+    "grocery",
+    "fast-Delivery",
+    "meal"
+  ],
+  "author": "Nayan Radadiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nayanrdeveloper/blinkit_api/issues"
+  },
+  "homepage": "https://github.com/nayanrdeveloper/blinkit_api#readme"
+}
