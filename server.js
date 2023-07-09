@@ -7,6 +7,7 @@ const categoryRoutes = require("./routes/categoryRoutes");
 const subCategoryRoutes = require("./routes/subCategoryRoute");
 const brandRoutes = require("./routes/brandRoutes");
 const productRoutes = require("./routes/productRoutes");
+const featureRoutes = require("./routes/featureRoutes");
 
 dotenv.config();
 connectDb();
@@ -22,8 +23,10 @@ app.use("/categories", categoryRoutes);
 app.use("/subcategories", subCategoryRoutes);
 //brand
 app.use("/brand", brandRoutes);
-//
+// Product
 app.use("/products", productRoutes);
+// Features
+app.use("/features", featureRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
