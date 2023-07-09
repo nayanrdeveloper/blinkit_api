@@ -4,7 +4,7 @@ const createFeature = async (req, res) => {
   try {
     const { title, products, sponsored } = req.body;
 
-    const feature = new Feature({
+    const feature = new featureModel({
       title,
       products,
       sponsored,
@@ -19,7 +19,7 @@ const createFeature = async (req, res) => {
 
 const fetchAllFeatures = async (req, res) => {
   try {
-    const features = await Feature.find().populate("products");
+    const features = await featureModel.find().populate("products");
     res.json(features);
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch features" });

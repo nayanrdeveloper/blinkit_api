@@ -8,6 +8,9 @@ router.post("/", productController.createProduct);
 // Fetch all products
 router.get("/", productController.fetchAllProducts);
 
+// Get product by ID
+router.get("/:productId", productController.getProductById);
+
 // Get products by category
 router.get("/category/:categoryId", productController.getProductsByCategory);
 

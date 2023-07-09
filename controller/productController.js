@@ -37,6 +37,19 @@ const createProduct = async (req, res) => {
   }
 };
 
+const getProductById = async (req, res) => {
+  try {
+    const { productId } = req.params;
+    const product = await productModel.findById(productId);
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+    res.json(product);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch product" });
+  }
+};
+
 const fetchAllProducts = async (req, res) => {
   try {
     const products = await productModel.find();
@@ -79,6 +92,7 @@ const getProductsByBrand = async (req, res) => {
 module.exports = {
   createProduct,
   fetchAllProducts,
+  getProductById,
   getProductsByCategory,
   getProductsBySubCategory,
   getProductsByBrand,
