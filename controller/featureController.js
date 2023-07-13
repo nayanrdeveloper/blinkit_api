@@ -26,7 +26,21 @@ const fetchAllFeatures = async (req, res) => {
   }
 };
 
+const fetchFeatureById = async (req, res) => {
+  try {
+    const { featureId } = req.params;
+    const feature = await featureModel.findById(featureId);
+    if (!feature) {
+      return res.status(404).json({ error: "Feature not found" });
+    }
+    res.json(feature);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch features" });
+  }
+};
+
 module.exports = {
   createFeature,
   fetchAllFeatures,
+  fetchFeatureById,
 };
