@@ -29,7 +29,7 @@ const fetchAllFeatures = async (req, res) => {
 const fetchFeatureById = async (req, res) => {
   try {
     const { featureId } = req.params;
-    const feature = await featureModel.findById(featureId);
+    const feature = await featureModel.findById(featureId).populate("products");
     if (!feature) {
       return res.status(404).json({ error: "Feature not found" });
     }
